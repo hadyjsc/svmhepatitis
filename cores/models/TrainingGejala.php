@@ -23,7 +23,6 @@ use Yii;
  * @property double $afp
  * @property double $protime
  * @property string $class
- * @property string $serologi
  */
 class TrainingGejala extends \yii\db\ActiveRecord
 {
@@ -41,10 +40,10 @@ class TrainingGejala extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['gejala_1', 'gejala_2', 'gejala_3', 'gejala_4', 'gejala_5', 'gejala_6', 'gejala_7', 'gejala_8', 'bilirubin', 'sgot', 'sgpt', 'gamma', 'afp', 'protime', 'class', 'serologi'], 'required'],
+            [['gejala_1', 'gejala_2', 'gejala_3', 'gejala_4', 'gejala_5', 'gejala_6', 'gejala_7', 'gejala_8', 'albumin', 'globulin', 'protein', 'sgot', 'sgpt', 'bilirubin', 'class'], 'required'],
             [['gejala_1', 'gejala_2', 'gejala_3', 'gejala_4', 'gejala_5', 'gejala_6', 'gejala_7', 'gejala_8'], 'integer'],
-            [['bilirubin', 'sgot', 'sgpt', 'gamma', 'afp', 'protime'], 'number'],
-            [['class', 'serologi'], 'string'],
+            [['albumin', 'globulin', 'protein', 'sgot', 'sgpt', 'bilirubin'], 'number'],
+            [['class'], 'string'],
         ];
     }
 
@@ -63,14 +62,13 @@ class TrainingGejala extends \yii\db\ActiveRecord
             'gejala_6' => 'Gejala 6',
             'gejala_7' => 'Gejala 7',
             'gejala_8' => 'Gejala 8',
-            'bilirubin' => 'Bilirubin',
-            'sgot' => 'Sgot',
-            'sgpt' => 'Sgpt',
-            'gamma' => 'Gamma',
-            'afp' => 'Afp',
-            'protime' => 'Protime',
+            'albumin' => 'Albumin',
+            'globulin' => 'Globulin',
+            'protein' => 'Protein',
+            'sgot' => 'SGOT',
+            'sgpt' => 'SGPT',
+            'bilirubin' => 'Protime',
             'class' => 'Class',
-            'serologi' => 'Serologi',
         ];
     }
 

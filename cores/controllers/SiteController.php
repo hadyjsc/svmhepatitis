@@ -7,38 +7,11 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
 use app\models\TrainingGejala;
 
 class SiteController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
-                'rules' => [
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
-            ],
-        ];
-    }
-
+    
     /**
      * {@inheritdoc}
      */
@@ -139,18 +112,14 @@ class SiteController extends Controller
 
         $data = array();
         $label = array();
-        $labelSerologi = array();
 
         $getTraining = TrainingGejala::find()->all();
 
         foreach ($getTraining as $value) {
-                $data[] = array($value->gejala_1,$value->gejala_2,$value->gejala_3,$value->gejala_4,$value->gejala_5,$value->gejala_6,$value->gejala_7,$value->gejala_8,$value->bilirubin,$value->sgot,$value->sgpt,$value->gamma,$value->afp,$value->protime);
+                $data[] = array($value->gejala_1,$value->gejala_2,$value->gejala_3,$value->gejala_4,$value->gejala_5,$value->gejala_6,$value->gejala_7,$value->gejala_8,$value->albumin,$value->globulin,$value->protein,$value->sgot,$value->sgpt,$value->bilirubin);
         }
         foreach ($getTraining as $value) {
                 $label[] = $value->class;
-        }
-        foreach ($getTraining as $value) {
-                $labelSerologi[] = $value->serologi;
         }
 
         $hasilT = $this->Transpose($data);

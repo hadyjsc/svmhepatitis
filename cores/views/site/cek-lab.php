@@ -13,28 +13,29 @@
               <div class="col-sm-12">
                 <div class="col-sm-4">
                     <div class="form-group">
-                      <label class="control-label">Total Bilirubin</label>
-                      <input name="lab" type="number" class="form-control">
+                      <label class="control-label"> Albumin</label>
+                      <input name="lab" type="number" class="form-control" placeholder="Batas Normal 3.4 - 4.8">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Globulin</label>
+                      <input name="lab" type="number" class="form-control" placeholder="Batas Normal 1.8 - 3.9">
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label">Protenin Total</label>
+                      <input name="lab" type="number" class="form-control" placeholder="Batas Normal 6.6 - 8.7">
                     </div>
                     <div class="form-group">
                       <label class="control-label">SGOT</label>
-                      <input name="lab" type="number" class="form-control">
+                      <input name="lab" type="number" class="form-control" placeholder="Batas Normal 0 - 40">
                     </div>
                     <div class="form-group">
                       <label class="control-label">SGPT</label>
-                      <input name="lab" type="number" class="form-control">
+                      <input name="lab" type="number" class="form-control" placeholder="Batas Normal 0 - 41">
                     </div>
+                    
                     <div class="form-group">
-                      <label class="control-label">Gamma GT</label>
-                      <input name="lab" type="number" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label"> Alkaline Phospatase (AFP)</label>
-                      <input name="lab" type="number" class="form-control">
-                    </div>
-                    <div class="form-group">
-                      <label class="control-label">Prothombine Time</label>
-                      <input name="lab" type="number" class="form-control">
+                      <label class="control-label">Bilirubin</label>
+                      <input name="lab" type="number" class="form-control" placeholder="Batas Normal 0 - 1">
                     </div>
                 </div>
                 <div class="col-sm-8">
