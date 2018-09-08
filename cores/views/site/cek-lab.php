@@ -62,8 +62,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="satu-inva">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -80,8 +80,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="dua-inva">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -112,8 +112,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="satu-invb">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -130,8 +130,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="dua-invb">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -148,8 +148,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="tiga-invb">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -166,8 +166,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="empat-invb">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -198,8 +198,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="satu-invc">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -216,8 +216,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="dua-invc">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -248,8 +248,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="satu-invd">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -266,8 +266,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="dua-invd">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -284,8 +284,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="tiga-invd">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -316,8 +316,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="satu-inve">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -334,8 +334,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="dua-inve">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>
@@ -352,8 +352,8 @@
                           <div class="form-group">
                             <select class="form-control" disabled="" name="serologi" id="tiga-inve">
                               <option selected="" value="0">Pilih Indikasi</option>
-                              <option value="Positif"> Positif </option>
-                              <option value="Negatif"> Negatif </option>
+                              <option value="1"> Positif </option>
+                              <option value="-1"> Negatif </option>
                             </select>
                           </div>
                         </div>

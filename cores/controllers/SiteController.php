@@ -71,12 +71,12 @@ class SiteController extends Controller
         return $this->render('hepatitis');
     }
 
-    public function actionCekGejala()
+    public function actionGejala()
     {
         return $this->render("cek-gejala");
     }
 
-    public function actionHitungGejala()
+    public function actionHitunggejala()
     {
         $alpha = 0.5;
         $lambda = 0.5;
@@ -129,7 +129,7 @@ class SiteController extends Controller
         return json_encode($result);
     }
 
-    public function actionHitungLab()
+    public function actionHitunglab()
     {
         $alpha = 0.5;
         $lambda = 0.5;
@@ -181,9 +181,57 @@ class SiteController extends Controller
             $string = "Negatif Hepatitis";
         }
 
+        $virus = $this->Virus($_POST["serologi"]);
+
         $result = array();
-        $result["response"] = array("code"=>"OK","result_code"=>$prediksi,"result_string"=>$string);
+        $result["response"] = array("code"=>"OK","result_code"=>$prediksi,"result_string"=>$string,"serologi"=>$virus);
         return json_encode($result);
+    }
+
+    public function Virus($v)
+    {
+        $hasilakhir = "";
+        $v = explode(",", $v);
+
+        // print_r($v);
+        $hasil = "";
+        if((!empty($v[0])) || (!empty($v[1])) ){
+            if($v[0] == '1' || $v == '1'){
+                $hasil = "A";
+            }
+        }
+        if(!empty($v[2]) || !empty($v[3]) || !empty($v[4]) || !empty($v[5])){
+            if(($v[2] == '1') || ($v[3] == '1')|| ($v[4] == '1')|| ($v[5] == '1')){
+                $hasil = "B";
+            }
+        }
+
+        if(!empty($v[6]) || !empty($v[7])){
+            if(($v[6] == '1') || ($v[7] == '1')){
+                $hasil = "C";
+            }
+        }
+
+        if(!empty($v[8]) || !empty($v[9]) || !empty($v[10])){
+            if(($v[8] == '1') || ($v[9] == '1')|| ($v[10] == '1')){
+                $hasil = "D";
+            }
+        }
+
+        if(!empty($v[11]) || !empty($v[12]) || $v[13]){
+            if(($v[11] == '1') || ($v[12] == '1')|| ($v[13] == '1')){
+                $hasil = "E";
+            }
+        }
+
+        if($hasil == ""){
+            $hasilakhir = "Anda Tidak Terkena Penyakit Hepatitis";
+        }
+        else{
+            $hasilakhir = "Anda Terkena Penyakit Hepatitis ".$hasil;
+        }
+
+        return $hasilakhir;
     }
 
     //Matrik

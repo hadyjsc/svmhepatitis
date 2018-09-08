@@ -24,14 +24,14 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
-    <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../assets/css/animate.css">
-    <link rel="stylesheet" href="../assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="../assets/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="../assets/css/tooplate-style.css">
-    <link rel="stylesheet" href="../assets/jquery-toggles/toggles-full.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/tooplate-style.css">
+    <link rel="stylesheet" href="assets/jquery-toggles/toggles-full.css">
 </head>
-    <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50" style="background-image: url('../assets/images/bgwizard.jpg');">
+    <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50" style="background-image: url('assets/images/bgwizard.jpg');">
     <?php $this->beginBody() ?>
     <section class="preloader">
         <div class="spinner">
@@ -56,14 +56,14 @@ AppAsset::register($this);
                 <span class="icon icon-bar"></span>
                 </button>
                 <!-- lOGO TEXT HERE -->
-                <a href="<?= Url::to(["site/index"]) ?>" class="navbar-brand" style="color: #fff;">Diagnosa Hepatitis</a>
+                <a href="<?= Url::to(["index"]) ?>" class="navbar-brand" style="color: #fff;">Diagnosa Hepatitis</a>
             </div>
             <!-- MENU LINKS -->
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li style="margin-right: 5px;"><a href="<?= Url::to(["site/index"]) ?>" class="smoothScroll" style="color: #778899; background-color: #f5f5f5; border-radius: 18px;">Halaman Utama</a></li>
-                    <li style="margin-right: 5px;"><a href="<?= Url::to(["site/hepatitis"]) ?>" class="smoothScroll" style="color: #778899; background-color: #f5f5f5; border-radius: 18px;">Hepatitis</a></li>
-                    <li style="margin-right: 5px;"><a href="<?= Url::to(["site/cek-gejala"]) ?>" class="smoothScroll" style="color: #778899; background-color: #f5f5f5; border-radius: 18px;">Cek Gejala</a></li>
+                    <li style="margin-right: 5px;"><a href="<?= Url::to(["index"]) ?>" class="smoothScroll" style="color: #778899; background-color: #f5f5f5; border-radius: 18px;">Halaman Utama</a></li>
+                    <li style="margin-right: 5px;"><a href="<?= Url::to(["hepatitis"]) ?>" class="smoothScroll" style="color: #778899; background-color: #f5f5f5; border-radius: 18px;">Hepatitis</a></li>
+                    <li style="margin-right: 5px;"><a href="<?= Url::to(["gejala"]) ?>" class="smoothScroll" style="color: #778899; background-color: #f5f5f5; border-radius: 18px;">Cek Gejala</a></li>
                 </ul>
             </div>
         </div>
@@ -73,14 +73,14 @@ AppAsset::register($this);
     </div>
 <?php $this->endBody() ?>
 
-<script src="../assets/jquery-toggles/toggles.min.js"></script>
-<script src="../assets/jquery-ui/jquery-ui.js"></script>
-<script src="../assets/js/jquery.sticky.js"></script>
-<script src="../assets/js/jquery.stellar.min.js"></script>
-<script src="../assets/js/wow.min.js"></script>
-<script src="../assets/js/smoothscroll.js"></script>
-<script src="../assets/js/owl.carousel.min.js"></script>
-<script src="../assets/js/custom.js"></script>
+<script src="assets/jquery-toggles/toggles.min.js"></script>
+<script src="assets/jquery-ui/jquery-ui.js"></script>
+<script src="assets/js/jquery.sticky.js"></script>
+<script src="assets/js/jquery.stellar.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/smoothscroll.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/custom.js"></script>
 <script type="text/javascript">
     var datagejala = [];
     var datalab = [];
@@ -172,12 +172,12 @@ AppAsset::register($this);
                 }
                 datagejala.push(nilai);
             });
-           console.log(datagejala);
+           // console.log(datagejala);
             $.ajax({
                 async: true,
                 type: "POST",
                 dataType: "JSON",
-                url: "hitung-gejala",
+                url: "hitunggejala",
                 data:"data="+datagejala,
                 beforeSend: function() {
                     $("#hitung1").html('<span class="fa fa-spiner fa-pulse"></span> &nbsp; Sedang Proses ...');
@@ -233,22 +233,24 @@ AppAsset::register($this);
             var mergeArray = $.merge(datagejala,datalab);
 
             $("select[name=serologi]").each(function(){
-                if ($(this).val().length > 0) {
+                if ($(this).val() == "1" || $(this).val() == "-1") {
                     nilaiserologi = $(this).val();
+                }else if($(this)[0].selectedIndex == 0) {
+                    nilaiserologi = "";
                 }else {
-                    nilaiserologi = "0";
+                    nilaiserologi = "";
                 }
                 dataserologi.push(nilaiserologi);
             });
             
-            console.log(mergeArray);
+            // console.log(dataserologi);
 
             $.ajax({
                 async: true,
                 type: "POST",
                 dataType: "JSON",
-                url: "hitung-lab",
-                data:"data="+mergeArray,
+                url: "hitunglab",
+                data:"data="+mergeArray+"&serologi="+dataserologi,
                 beforeSend: function() {
                     $("#hitung2").html('<span class="fa fa-spiner fa-pulse"></span> &nbsp; Sedang Proses ...');
                 },
@@ -261,7 +263,7 @@ AppAsset::register($this);
                         $("#lab_diagnosis").css("display","none");
                         $("#cekLab").css("display","none");
                         if (data["response"]["result_code"] == "1") {
-                            html = "<br><div class='panel panel-danger'><div class='panel-heading'><h4> Anda <strong>"+data["response"]["result_string"]+"</strong></h4></div><div class='panel-body'>Silahkan Anda Berobat Agar Tidak Menjadi Penyakit Yang Berbahaya</div></div>";
+                            html = "<br><div class='panel panel-danger'><div class='panel-heading'><h4> Anda <strong>"+data["response"]["result_string"]+"<br>"+data["response"]["serologi"]+"</strong></h4></div><div class='panel-body'>Silahkan Anda Berobat Agar Tidak Menjadi Penyakit Yang Berbahaya</div></div>";
                         }else {
                             html = "<br><div class='panel panel-info'><div class='panel-heading'><h4> Anda <strong>"+data["response"]["result_string"]+"</h4></div><div class='panel-body'>Jaga Kesehatan Anda Dan Saran2 Lainnya</div></div>";
                         }
